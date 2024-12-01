@@ -1,0 +1,7 @@
+import csv
+
+def generate_report(transactions):
+    with open('report.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(["Transaction ID", "Sender", "Receiver", "Amount", "Timestamp"])
+        writer.writerows(transactions)
