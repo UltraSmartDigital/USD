@@ -1,0 +1,6 @@
+from scipy.io.wavfile import write
+import numpy as np
+
+def generate_synthetic_voice(text):
+    voice_data = np.random.randint(-32767, 32767, 44100 * 5).astype(np.int16)
+    write("synthetic_voice.wav", 44100, voice_data)
