@@ -1,0 +1,10 @@
+import QRCode from 'qrcode.react';
+
+function QRPayment({ address, amount }) {
+    return (
+        <div>
+            <QRCode value={`ethereum:${address}?amount=${amount}`} />
+            <p>Scan to pay {amount} USD to {address}</p>
+        </div>
+    );
+}
