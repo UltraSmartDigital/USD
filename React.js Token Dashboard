@@ -1,0 +1,15 @@
+function Dashboard() {
+    const [balance, setBalance] = useState(0);
+    const getBalance = async () => {
+        const result = await fetch('/api/token/balance/YOUR_WALLET_ADDRESS');
+        const data = await result.json();
+        setBalance(data.balance);
+    };
+    return (
+        <div>
+            <h1>USD Dashboard</h1>
+            <button onClick={getBalance}>Check Balance</button>
+            <p>Balance: {balance} USD</p>
+        </div>
+    );
+}
