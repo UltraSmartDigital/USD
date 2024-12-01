@@ -1,0 +1,5 @@
+from moviepy.editor import TextClip, concatenate_videoclips
+def create_video(text):
+    clips = [TextClip(sentence, fontsize=50, color='white', duration=3) for sentence in text.split('.')]
+    video = concatenate_videoclips(clips)
+    video.write_videofile("output.mp4")
