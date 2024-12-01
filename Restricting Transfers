@@ -1,0 +1,7 @@
+modifier notBlacklisted(address _address) {
+    require(!blacklisted[_address], "Address is blacklisted");
+    _;
+}
+function transfer(address recipient, uint256 amount) public override notBlacklisted(msg.sender) returns (bool) {
+    return super.transfer(recipient, amount);
+}
