@@ -1,0 +1,4 @@
+app.get('/api/wallet/create', (req, res) => {
+    const account = web3.eth.accounts.create();
+    res.send(account);
+});
