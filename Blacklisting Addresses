@@ -1,0 +1,4 @@
+mapping(address => bool) public blacklisted;
+function blacklist(address _address) public onlyAdmin {
+    blacklisted[_address] = true;
+}
