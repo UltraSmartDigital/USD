@@ -1,0 +1,9 @@
+app.get('/api/transactions/:address', async (req, res) => {
+    const { address } = req.params;
+    const transactions = await web3.eth.getPastLogs({
+        address,
+        fromBlock: 'earliest',
+        toBlock: 'latest'
+    });
+    res.json(transactions);
+});
