@@ -1,0 +1,4 @@
+from gtts import gTTS
+def text_to_speech(text):
+    tts = gTTS(text)
+    tts.save("output.mp3")
