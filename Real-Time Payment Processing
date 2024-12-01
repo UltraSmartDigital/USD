@@ -1,0 +1,9 @@
+import stripe
+stripe.api_key = "YOUR_STRIPE_SECRET_KEY"
+
+def create_payment(amount, currency):
+    payment = stripe.PaymentIntent.create(
+        amount=amount,
+        currency=currency
+    )
+    return payment
