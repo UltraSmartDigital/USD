@@ -1,0 +1,13 @@
+name: Deploy to AWS
+on: push
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Deploy
+        run: |
+          npm install
+          npm run build
+          aws s3 sync build/ s3://your-bucket-name
